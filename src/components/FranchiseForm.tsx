@@ -77,7 +77,8 @@ export function FranchiseForm({ onSubmit, isLoading: externalLoading }: Franchis
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      const rect = e.currentTarget?.getBoundingClientRect();
+      const target = e.currentTarget as Element;
+      const rect = target?.getBoundingClientRect();
       if (rect) {
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
@@ -268,7 +269,7 @@ export function FranchiseForm({ onSubmit, isLoading: externalLoading }: Franchis
             
             <CardHeader className="text-center pb-8 pt-12 px-6 md:px-12 relative">
               {/* Decorative header icon removed for a cleaner look */}
-
+              
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
